@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= whyd.app %>/styles',
-                    src: 'main.less',
+                    src: ['whyd.less'],
                     dest: '<%= whyd.dist %>/styles',
                     ext: '.css'
                 }]
@@ -106,9 +106,7 @@ module.exports = function (grunt) {
                     report: 'min'
                 },
                 files: {
-                    '<%= whyd.dist %>/styles/main.css': [
-                        '<%= whyd.dist %>/styles/main.css'
-                    ]
+                    '<%= whyd.dist %>/styles/whyd.css': '<%= whyd.dist %>/styles/whyd.css'
                 }
             }
         },
