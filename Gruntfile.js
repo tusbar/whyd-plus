@@ -174,8 +174,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'clean:dist',
-        'less:dist',
         'bower:dist',
+        'less:dist',
         'requirejs:dist',
         'copy:dist',
         'imagemin:dist',
