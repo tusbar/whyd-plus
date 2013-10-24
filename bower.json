@@ -1,0 +1,12 @@
+{
+  "name": "whyd-plus",
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "requirejs": "~2.1.9",
+    "spotify": "*",
+    "underscore.string": "~2.3.3"
+  },
+  "resolutions": {
+    "jquery": "~2.0.3"
+  }
+}

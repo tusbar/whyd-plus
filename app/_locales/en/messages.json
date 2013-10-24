@@ -1,0 +1,10 @@
+{
+  "name": {
+      "message": "Whyd+",
+      "description": "Extension name."
+  },
+  "description": {
+      "message": "This extension adds extra features to Whyd (http://whyd.com) and integrates it with other services such as Spotify and SoundCloud.",
+      "description": "Extension short description."
+  }
+}

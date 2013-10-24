@@ -1,0 +1,27 @@
+{
+  "name": "whyd-plus",
+  "version": "0.1.0",
+  "description": "Chrome extension that adds extra features to whyd.com",
+  "author": "Bertrand Marron <b@pk.am>",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "matchdep": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-jshint": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tusbar/whyd-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tusbar/whyd-plus/issues"
+  }
+}
