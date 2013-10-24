@@ -56,7 +56,10 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= whyd.app %>/styles',
-                    src: ['whyd.less'],
+                    src: [
+                        'whyd.less',
+                        'soundcloud.less'
+                    ],
                     dest: '<%= whyd.dist %>/styles',
                     ext: '.css'
                 }]
@@ -106,7 +109,8 @@ module.exports = function (grunt) {
                     report: 'min'
                 },
                 files: {
-                    '<%= whyd.dist %>/styles/whyd.css': '<%= whyd.dist %>/styles/whyd.css'
+                    '<%= whyd.dist %>/styles/whyd.css': '<%= whyd.dist %>/styles/whyd.css',
+                    '<%= whyd.dist %>/styles/soundcloud.css': '<%= whyd.dist %>/styles/soundcloud.css'
                 }
             }
         },

@@ -26,11 +26,17 @@
       {
           "matches": [ "*://*.whyd.com/*" ],
           "css": [ "styles/whyd.css" ]
+      },
+      {
+          "matches": [ "*://*.soundcloud.com/*" ],
+          "css": [ "styles/soundcloud.css" ]
       }
   ],
 
   "web_accessible_resources": [
-      "images/spotify.png"
+      "images/spotify.png",
+      "images/sc-small-whyd.png",
+      "images/sc-medium-whyd.png"
   ],
 
   "permissions": [

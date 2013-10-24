@@ -1,0 +1,35 @@
+.sc-button {
+
+    &.sc-button-whyd {
+
+        &.sc-button-small {
+            text-indent: 18px;
+
+            &:before {
+                background-image: url("chrome-extension://__MSG_@@extension_id__/images/sc-small-whyd.png");
+            }
+        }
+
+        &.sc-button-medium {
+            text-indent: 18px;
+
+            &:before {
+                background-image: url("chrome-extension://__MSG_@@extension_id__/images/sc-medium-whyd.png");
+                top: 2px;
+                left: 4px;
+            }
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center center;
+            top: 0;
+            left: 4px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

@@ -11,6 +11,10 @@ define(function (require, exports /*, module */) {
         if (app.checkHost('whyd.com')) {
             require('./whyd/index')(app);
         }
+        else if (app.checkHost('soundcloud.com')) {
+            require('./soundcloud/index')(app);
+        }
+
     };
 
 });
