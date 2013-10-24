@@ -15,7 +15,7 @@ define(function (require, exports, module) {
                 }
             }
         }, this);
-    }
+    };
 
     module.exports = function (/* app */) {
         var container = $('#app');
@@ -24,6 +24,6 @@ define(function (require, exports, module) {
         container.on('DOMNodeInserted', function (e) {
             updateSounds($(e.target).find('.sound'));
         });
-    }
+    };
 
 });

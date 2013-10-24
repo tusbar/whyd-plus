@@ -29,7 +29,7 @@ define(function (require, exports, module) {
         get title() {
             return this.el.find('a.soundTitle__title').text();
         }
-    }
+    };
 
     module.exports = Playlist;
 });
