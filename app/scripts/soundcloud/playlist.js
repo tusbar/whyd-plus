@@ -29,7 +29,7 @@ define(function (require, exports, module) {
 
                         $.post('http://whyd.com/api/post', {
                             action: 'insert',
-                            eld: '/sc' + a.pathname + '#' + t.uri,
+                            eId: '/sc' + a.pathname + '#' + t.uri,
                             name: title,
                             img: t.artwork_url
                         }, function () {
