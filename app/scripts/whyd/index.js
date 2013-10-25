@@ -20,14 +20,7 @@ define(function (require, exports, module) {
 
         updatePosts(container.find('.post'));
         container.on('DOMNodeInserted', function (e) {
-            var el = $(e.target);
-
-            if (el.hasClass('post')) {
-                updatePosts(el);
-            }
-            else if (el.is(container)) {
-                updatePosts(el.find('.posts'));
-            }
+            updatePosts($(e.target).find('.post'));
         });
     };
 });
