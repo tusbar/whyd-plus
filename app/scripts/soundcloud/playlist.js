@@ -42,11 +42,8 @@ define(function (require, exports, module) {
         },
 
         fetch: function () {
-            console.log('url = ', this.url);
             return api.resolve(this.url, $.proxy(function (err, res) {
-                console.log('coucou', err);
                 if (!err) {
-                    console.log('no error');
                     this.data = res;
                 }
             }, this));
