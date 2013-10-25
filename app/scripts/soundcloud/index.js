@@ -11,7 +11,7 @@ define(function (require, exports, module) {
 
                 if (sound.hasClass('playlist')) {
                     new Playlist(sound)
-                        .addWhydShareButton(sound.find('.sc-button-group-small').length !== 0);
+                        .addWhydShareButton(sound.find('.sc-button-group-small').length ? 'small' : 'medium');
                 }
             }
         }, this);
