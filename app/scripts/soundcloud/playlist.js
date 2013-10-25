@@ -31,7 +31,8 @@ define(function (require, exports, module) {
                             action: 'insert',
                             eId: '/sc' + a.pathname + '#' + t.uri,
                             name: title,
-                            img: t.artwork_url
+                            img: t.artwork_url,
+                            ctx: 'w+'
                         }, function () {
                             console.log('good!');
                         });
