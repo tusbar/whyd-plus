@@ -3,7 +3,7 @@
   "dependencies": {
     "jquery": "~2.0.3",
     "requirejs": "~2.1.9",
-    "spotify": "*",
+    "spotify": "~0.2.0",
     "underscore.string": "~2.3.3"
   },
   "resolutions": {
