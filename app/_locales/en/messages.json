@@ -8,7 +8,7 @@
       "description": "Extension short name."
   },
   "description": {
-      "message": "This extension adds extra features to Whyd (http://whyd.com) and integrates it with other services such as Spotify and SoundCloud.",
+      "message": "Chrome extension that adds extra features to whyd.com",
       "description": "Extension short description."
   }
 }
