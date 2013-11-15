@@ -17,7 +17,7 @@ define(function (require, exports, module) {
                 return this;
             }
 
-            require('spotify').tracks(encodeURIComponent(title), $.proxy(function (err, tracks) {
+            require('spotify').tracks(title, $.proxy(function (err, tracks) {
                 if (!err && tracks && tracks.length) {
                     var track = tracks[0];
                     var artists = track.artists.map(function (artist) {
