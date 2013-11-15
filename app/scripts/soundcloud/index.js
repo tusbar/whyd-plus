@@ -1,17 +1,25 @@
 define(function (require, exports, module) {
 
     var $ = require('jquery');
-    var Playlist = require('./playlist');
+    var Track = require('./track');
 
     var updateSounds = function (sounds) {
         Array.prototype.forEach.call(sounds, function (sound) {
             sound = $(sound);
-            if (!sound.data('w-links-enabled')) {
-                sound.data('w-links-enabled', true);
 
-                if (sound.hasClass('playlist')) {
-                    new Playlist(sound)
-                        .addWhydShareButton(sound.find('.sc-button-group-small').length ? 'small' : 'medium');
+            if (!sound.data('w-links-enabled')) {
+                var shareButton = sound.find('.sc-button-share');
+
+                if (shareButton.length) {
+                    sound.data('w-links-enabled', true);
+
+                    var track = new Track({
+                        element: sound,
+                        isPlaylist: sound.hasClass('playlist'),
+                        size: sound.find('.sc-button-group-small').length ? 'small' : 'medium'
+                    });
+
+                    track.addWhydShareButton(shareButton);
                 }
             }
         }, this);
@@ -22,7 +30,17 @@ define(function (require, exports, module) {
 
         updateSounds(container.find('.sound'));
         container.on('DOMNodeInserted', function (e) {
-            updateSounds($(e.target).find('.sound'));
+            var el = $(e.target);
+
+            if (el.hasClass('soundActions')) {
+                updateSounds(el.closest('.sound'));
+            }
+            else if (el.hasClass('sound')) {
+                updateSounds(el);
+            }
+            else {
+                updateSounds(el.find('.sound'));
+            }
         });
     };
 
