@@ -1,6 +1,6 @@
 {
   "name": "whyd-plus",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Chrome extension that adds extra features to whyd.com",
   "author": "Bertrand Marron <b@pk.am>",
   "scripts": {
