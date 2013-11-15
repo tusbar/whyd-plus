@@ -24,7 +24,7 @@ define(function (require, exports, module) {
             this.el = $(options.element);
         },
 
-        _addPlaylistToWhyd: function (e) {
+        _postPlaylist: function (e) {
             e.preventDefault();
 
             this.fetch().done($.proxy(function () {
@@ -50,7 +50,7 @@ define(function (require, exports, module) {
             }, this));
         },
 
-        _addTrackToWhyd: function (e) {
+        _postTrack: function (e) {
             e.preventDefault();
 
             this.fetch().done($.proxy(function () {
@@ -92,8 +92,8 @@ define(function (require, exports, module) {
 
             btn.click(
                 this.options.isPlaylist ?
-                    $.proxy(this._addPlaylistToWhyd, this) :
-                    $.proxy(this._addTrackToWhyd, this)
+                    $.proxy(this._postPlaylist, this) :
+                    $.proxy(this._postTrack, this)
             );
         },
 
