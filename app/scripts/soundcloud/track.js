@@ -90,10 +90,11 @@ define(function (require, exports, module) {
                 .text('Whyd')
                 .insertAfter(after);
 
-            btn.click(this.options.isPlaylist ?
-                      $.proxy(this._addPlaylistToWhyd, this) :
-                      $.proxy(this._addTrackToWhyd, this)
-                     );
+            btn.click(
+                this.options.isPlaylist ?
+                    $.proxy(this._addPlaylistToWhyd, this) :
+                    $.proxy(this._addTrackToWhyd, this)
+            );
         },
 
         get url() {
