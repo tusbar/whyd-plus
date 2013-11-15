@@ -1,8 +1,9 @@
 define(function (require, exports, module) {
 
     var $ = require('jquery');
-    var api = require('./api');
     var app = require('app');
+    var soundcloudApi = require('./api');
+    var whydApi = require('../whyd/api');
 
     var Track = function () {
         return this.initialize.apply(this, arguments);
@@ -36,14 +37,13 @@ define(function (require, exports, module) {
                     var a = document.createElement('a');
                     a.href = t.permalink_url;
 
-                    $.post('http://whyd.com/api/post', {
-                        action: 'insert',
-                        eId: '/sc' + a.pathname + '#' + t.uri,
-                        name: title,
-                        img: t.artwork_url,
-                        ctx: 'w+'
+                    whydApi.post('soundcloud', {
+                        path: a.pathname,
+                        url: t.uri,
+                        title: title,
+                        image: t.artwork_url
                     }, function () {
-                        console.log('good!');
+                        console.log('good');
                     });
                 }, this);
 
@@ -62,20 +62,19 @@ define(function (require, exports, module) {
                 var a = document.createElement('a');
                 a.href = this.data.permalink_url;
 
-                $.post('http://whyd.com/api/post', {
-                    action: 'insert',
-                    eId: '/sc' + a.pathname + '#' + this.data.uri,
-                    name: title,
-                    img: this.data.artwork_url,
-                    ctx: 'w+'
+                whydApi.post('soundcloud', {
+                    path: a.pathname,
+                    url: this.data.uri,
+                    title: title,
+                    image: this.data.artwork_url
                 }, function () {
-                    console.log('good!');
+                    console.log('good');
                 });
             }, this));
         },
 
         fetch: function () {
-            return api.resolve(this.url, $.proxy(function (err, res) {
+            return soundcloudApi.resolve(this.url, $.proxy(function (err, res) {
                 if (!err) {
                     this.data = res;
                 }
