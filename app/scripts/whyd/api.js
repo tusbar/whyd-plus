@@ -16,8 +16,8 @@ define(function (require, exports /*, module */) {
             throw new Error('Invalid source');
         }
 
-        if (!options.path) {
-            throw new Error('Path missing');
+        if (!options.id) {
+            throw new Error('Id missing');
         }
 
         if (!options.url) {
@@ -28,13 +28,13 @@ define(function (require, exports /*, module */) {
             throw new Error('Title missing');
         }
 
-        if (!_s.startsWith(options.path, '/')) {
-            options.path = '/' + options.path;
+        if (!_s.startsWith(options.id, '/')) {
+            options.id = '/' + options.id;
         }
 
         return $.post('https://whyd.com/api/post', {
             action: 'insert',
-            eId: '/' + source + options.path + '#' + options.url,
+            eId: '/' + source + options.id + '#' + options.url,
             name: options.title,
             img: options.image,
             text: options.text,

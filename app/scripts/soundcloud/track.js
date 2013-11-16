@@ -38,7 +38,7 @@ define(function (require, exports, module) {
                     a.href = t.permalink_url;
 
                     whydApi.post('soundcloud', {
-                        path: a.pathname,
+                        id: a.pathname,
                         url: t.uri,
                         title: title,
                         image: t.artwork_url
@@ -63,7 +63,7 @@ define(function (require, exports, module) {
                 a.href = this.data.permalink_url;
 
                 whydApi.post('soundcloud', {
-                    path: a.pathname,
+                    id: a.pathname,
                     url: this.data.uri,
                     title: title,
                     image: this.data.artwork_url
