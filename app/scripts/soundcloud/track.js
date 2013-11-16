@@ -17,11 +17,11 @@ define(function (require, exports, module) {
                 throw new Error('No element specified');
             }
 
-            options.isPlaylist = options.isPlaylist || false;
-            options.size = options.size || 'small';
-
             this.options = options;
             this.el = $(options.element);
+            this.isPlaylist = this.el.hasClass('playlist');
+            this.size = this.el.find('.sc-button-group-small').length ?
+                'small' : 'medium';
         },
 
         _postPlaylist: function (e) {
@@ -86,12 +86,12 @@ define(function (require, exports, module) {
                 .attr('title', 'Whyd')
                 .attr('tabindex', 0)
                 .addClass('sc-button sc-button-whyd sc-button-responsive')
-                .addClass('sc-button-' + this.options.size)
+                .addClass('sc-button-' + this.size)
                 .text('Whyd')
                 .insertAfter(after);
 
             btn.click(
-                this.options.isPlaylist ?
+                this.isPlaylist ?
                     $.proxy(this._postPlaylist, this) :
                     $.proxy(this._postTrack, this)
             );

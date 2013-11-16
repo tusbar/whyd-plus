@@ -14,9 +14,7 @@ define(function (require, exports, module) {
                     sound.data('w-links-enabled', true);
 
                     var track = new Track({
-                        element: sound,
-                        isPlaylist: sound.hasClass('playlist'),
-                        size: sound.find('.sc-button-group-small').length ? 'small' : 'medium'
+                        element: sound
                     });
 
                     track.addWhydShareButton(shareButton);
