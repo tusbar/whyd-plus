@@ -20,10 +20,6 @@ define(function (require, exports /*, module */) {
             throw new Error('Id missing');
         }
 
-        if (!options.url) {
-            throw new Error('Url missing');
-        }
-
         if (!options.title) {
             throw new Error('Title missing');
         }
@@ -32,9 +28,16 @@ define(function (require, exports /*, module */) {
             options.id = '/' + options.id;
         }
 
+        if (source === 'sc') {
+            if (!options.url) {
+                throw new Error('Url missing');
+            }
+            options.id += '#' + options.url;
+        }
+
         return $.post('https://whyd.com/api/post', {
             action: 'insert',
-            eId: '/' + source + options.id + '#' + options.url,
+            eId: '/' + source + options.id,
             name: options.title,
             img: options.image,
             text: options.text,
