@@ -13,9 +13,7 @@ define(function (require, exports, module) {
                 if (shareButton.length) {
                     sound.data('w-links-enabled', true);
 
-                    var track = new Track({
-                        element: sound
-                    });
+                    var track = new Track(element);
 
                     track.addWhydShareButton(shareButton);
                 }

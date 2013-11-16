@@ -10,15 +10,12 @@ define(function (require, exports, module) {
     };
 
     Track.prototype = {
-        initialize: function (options) {
-            options = options || {};
-
-            if (!options.element) {
+        initialize: function (element) {
+            if (element) {
                 throw new Error('No element specified');
             }
 
-            this.options = options;
-            this.el = $(options.element);
+            this.el = $(element);
             this.isPlaylist = this.el.hasClass('playlist');
             this.size = this.el.find('.sc-button-group-small').length ?
                 'small' : 'medium';
