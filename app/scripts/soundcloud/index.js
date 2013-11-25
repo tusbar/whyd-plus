@@ -8,7 +8,7 @@ define(function (require, exports, module) {
             sound = $(sound);
 
             if (!sound.data('w-links-enabled')) {
-                var button = sound.find('.sc-button').last();
+                var button = sound.find('.soundActions .sc-button').last();
 
                 if (button.length) {
                     sound.data('w-links-enabled', true);
