@@ -37,17 +37,15 @@ define(function (require, exports, module) {
         container.on('DOMNodeInserted', function (e) {
             var el = $(e.target);
 
-            if (el.hasClass('soundActions')) {
-                updateSounds(el.closest('.sound'));
-            }
-            else if (el.hasClass('sound')) {
+            if (el.hasClass('sound')) {
                 updateSounds(el);
             }
             else if (el.hasClass('trackList')) {
                 updateTrackLists(el);
             }
             else {
-                updateSounds(el.find('.sound'));
+                updateTrackLists(el.find('.trackList'));
+                updateSounds(el.closest('.sound'));
             }
         });
     };
