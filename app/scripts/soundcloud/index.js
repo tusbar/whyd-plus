@@ -21,10 +21,20 @@ define(function (require, exports, module) {
         }, this);
     };
 
+    var updateTrackLists = function (trackLists) {
+        Array.prototype.forEach.call(trackLists, function (trackList) {
+            trackList = $(trackList);
+
+            updateSounds(trackList.find('.soundBadge'));
+        }, this);
+    };
+
     module.exports = function (/* app */) {
         var container = $('#app');
 
         updateSounds(container.find('.sound'));
+        updateSounds(container.find('.soundBadge'));
+
         container.on('DOMNodeInserted', function (e) {
             var el = $(e.target);
 
@@ -33,6 +43,9 @@ define(function (require, exports, module) {
             }
             else if (el.hasClass('sound')) {
                 updateSounds(el);
+            }
+            else if (el.hasClass('trackList')) {
+                updateTrackLists(el);
             }
             else {
                 updateSounds(el.find('.sound'));

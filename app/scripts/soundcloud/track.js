@@ -17,6 +17,7 @@ define(function (require, exports, module) {
 
             this.el = $(element);
             this.isPlaylist = this.el.hasClass('playlist');
+            this.isBadge = this.el.hasClass('soundBadge');
             this.size = this.el.find('.sc-button-group-small').length ?
                 'small' : 'medium';
         },
@@ -86,6 +87,10 @@ define(function (require, exports, module) {
                 .addClass('sc-button-' + this.size)
                 .text('Whyd')
                 .insertAfter(after);
+
+            if (this.isBadge) {
+                btn.addClass('sc-button-icon');
+            }
 
             btn.click(
                 this.isPlaylist ?
