@@ -8,14 +8,14 @@ define(function (require, exports, module) {
             sound = $(sound);
 
             if (!sound.data('w-links-enabled')) {
-                var shareButton = sound.find('.sc-button-share');
+                var button = sound.find('.sc-button').last();
 
-                if (shareButton.length) {
+                if (button.length) {
                     sound.data('w-links-enabled', true);
 
                     var track = new Track(sound);
 
-                    track.addWhydShareButton(shareButton);
+                    track.addWhydShareButton(button);
                 }
             }
         }, this);
