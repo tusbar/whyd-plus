@@ -11,7 +11,7 @@ define(function (require, exports, module) {
 
     Track.prototype = {
         initialize: function (element) {
-            if (element) {
+            if (!element) {
                 throw new Error('No element specified');
             }
 
