@@ -33,7 +33,7 @@ define(function (require, exports, module) {
         var container = $('#app');
 
         updateSounds(container.find('.sound'));
-        updateSounds(container.find('.soundBadge'));
+        updateTrackLists(container.find('.trackList'));
 
         container.on('DOMNodeInserted', function (e) {
             var el = $(e.target);
