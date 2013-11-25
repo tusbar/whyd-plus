@@ -13,9 +13,8 @@ define(function (require, exports, module) {
                 if (button.length) {
                     sound.data('w-links-enabled', true);
 
-                    var track = new Track(sound);
-
-                    track.addWhydShareButton(button);
+                    new Track(sound)
+                        .addWhydShareButton(button);
                 }
             }
         }, this);
