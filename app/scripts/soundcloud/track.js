@@ -40,8 +40,6 @@ define(function (require, exports, module) {
                         url: t.uri,
                         title: title,
                         image: t.artwork_url
-                    }, function () {
-                        console.log('good');
                     });
                 }, this);
 
@@ -65,8 +63,6 @@ define(function (require, exports, module) {
                     url: this.data.uri,
                     title: title,
                     image: this.data.artwork_url
-                }, function () {
-                    console.log('good');
                 });
             }, this));
         },
