@@ -10,6 +10,7 @@ define(function (require, exports /*, module */) {
 
     exports.post = function (source, options, callback) {
         options = options || {};
+        callback = callback || function () {};
         source = sourceMap[source];
 
         if (!source) {
