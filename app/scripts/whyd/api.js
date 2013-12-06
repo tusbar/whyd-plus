@@ -65,5 +65,5 @@ define(function (require, exports /*, module */) {
         }).error(function (err) {
             callback(err || {});
         });
-    }
+    };
 });
