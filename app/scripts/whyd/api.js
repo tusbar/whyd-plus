@@ -48,4 +48,21 @@ define(function (require, exports /*, module */) {
             callback(err || {});
         });
     };
+
+    exports.follow = function (userId, callback) {
+        callback = callback || function () {};
+
+        if (!userId) {
+            throw new Error('Missing userId');
+        }
+
+        return $.get('https://whyd.com/api/follow', {
+            action: 'insert',
+            tId: userId
+        }, function () {
+            callback(null, { success: true });
+        }).error(function (err) {
+            callback(err || {});
+        });
+    }
 });
