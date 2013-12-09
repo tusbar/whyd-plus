@@ -50,6 +50,20 @@ define(function (require, exports /*, module */) {
         });
     };
 
+    exports.getFollowers = function (userId, callback) {
+        callback = callback || function () {};
+
+        if (!userId) {
+            throw new Error('Missing userId');
+        }
+
+        return $.get('https://whyd.com/api/user/' + userId + '/subscribers', function () {
+            callback(null, { success: true });
+        }).error(function (err) {
+            callback(err || {});
+        });
+    };
+
     exports.follow = function (userId, callback) {
         callback = callback || function () {};
 
