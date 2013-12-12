@@ -24,13 +24,18 @@ define(function (require, exports, module) {
                         return artist.name;
                     });
 
-                    this.el.find('.stats > .btnShare').after(
-                        $('<a />')
-                            .attr('href', track.href)
-                            .attr('title', artists.join(', ') + ' - ' + track.name)
-                            .addClass('btnSpotify')
-                            .text('Spotify')
-                    );
+                    var btnShare = this.el.find('.btns > .btnShare');
+
+                    $('<a />')
+                        .attr('href', track.href)
+                        .attr('title', artists.join(', ') + ' - ' + track.name)
+                        .addClass('btnSpotify')
+                        .text('Spotify')
+                        .insertAfter(btnShare);
+
+                    $('<span />')
+                        .text('·')
+                        .insertAfter(btnShare);
                 }
             }, this));
 
