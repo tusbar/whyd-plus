@@ -4,7 +4,8 @@
     "jquery": "~2.0.3",
     "requirejs": "~2.1.9",
     "spotify": "~0.2.0",
-    "underscore.string": "~2.3.3"
+    "underscore.string": "~2.3.3",
+    "underscore-amd": "~1.5.2"
   },
   "resolutions": {
     "jquery": "~2.0.3"

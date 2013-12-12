@@ -1,12 +1,15 @@
 define(function (require, exports /*, module */) {
 
     var $ = require('jquery');
+    var _ = require('underscore');
     var _s = require('underscore.string');
 
     var clientId = 'w+';
     var sourceMap = {
         'soundcloud': 'sc'
     };
+
+    exports.userId = '526a31327e91c862b2b0ab3b';
 
     exports.post = function (source, options, callback) {
         options = options || {};
@@ -50,6 +53,26 @@ define(function (require, exports /*, module */) {
         });
     };
 
+    exports.getUserInfo = function (userId, callback) {
+        if (_.isFunction(userId)) {
+            callback = userId;
+            userId = null;
+        }
+
+        callback = callback || function () {};
+
+        var url = 'https://whyd.com/api/user';
+        if (userId) {
+            url += '/' + userId;
+        }
+
+        return $.get(url, function (data) {
+            callback(null, data);
+        }).error(function (err) {
+            callback(err || {});
+        });
+    };
+
     exports.getFollowers = function (userId, callback) {
         callback = callback || function () {};
 
@@ -57,8 +80,22 @@ define(function (require, exports /*, module */) {
             throw new Error('Missing userId');
         }
 
-        return $.get('https://whyd.com/api/user/' + userId + '/subscribers', function () {
-            callback(null, { success: true });
+        return $.get('https://whyd.com/api/user/' + userId + '/subscribers', function (data) {
+            callback(null, data);
+        }).error(function (err) {
+            callback(err || {});
+        });
+    };
+
+    exports.getFollowing = function (userId, callback) {
+        callback = callback || function () {};
+
+        if (!userId) {
+            throw new Error('Missing userId');
+        }
+
+        return $.get('https://whyd.com/api/user/' + userId + '/subscriptions', function (data) {
+            callback(null, data);
         }).error(function (err) {
             callback(err || {});
         });
