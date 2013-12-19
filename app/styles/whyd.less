@@ -1,13 +1,17 @@
-.post {
+@import "font-awesome/less/font-awesome.less";
+@fa-font-path: "chrome-extension://__MSG_@@extension_id__/fonts";
 
-    a.btnSpotify {
-        background-image: url("chrome-extension://__MSG_@@extension_id__/images/w-icon-post-spotify.png");
-        background-position: 2px 1px;
-        margin-left: 4px;
-        margin-right: 3px;
+.post > .btns > a.btnSpotify {
+    i {
+        color: #b3b3b3;
+    }
 
-        &:hover {
-            background-position: 2px -12px;
+    &:hover {
+        i {
+            color: #4376df;
         }
     }
+
+    background: none;
+    padding-left: 3px;
 }

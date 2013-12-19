@@ -119,16 +119,22 @@ module.exports = function (grunt) {
 
         copy: {
             dist: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= whyd.app %>',
-                    dest: '<%= whyd.dist %>',
-                    src: [
-                        '_locales/**',
-                        'images/**'
-                    ]
-                }]
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= whyd.app %>',
+                        dest: '<%= whyd.dist %>',
+                        src: [
+                            '_locales/**',
+                            'images/**'
+                        ]
+                    },
+                    {
+                        src: '<%= whyd.app %>/bower_components/font-awesome/fonts/fontawesome-webfont.woff',
+                        dest: '<%= whyd.dist %>/fonts/fontawesome-webfont.woff'
+                    }
+                ]
             }
         },
 

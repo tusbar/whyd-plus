@@ -34,6 +34,7 @@
   ],
 
   "web_accessible_resources": [
+      "fonts/fontawesome-webfont.woff",
       "images/w-icon-post-spotify.png",
       "images/sc-small-whyd.png",
       "images/sc-medium-whyd.png"

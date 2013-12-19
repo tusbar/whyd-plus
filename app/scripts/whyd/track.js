@@ -1,5 +1,7 @@
 define(function (require, exports, module) {
 
+    var spotifyButton = require('hbs!./templates/spotify-button');
+
     var Track = function () {
         return this.initialize.apply(this, arguments);
     };
@@ -24,18 +26,13 @@ define(function (require, exports, module) {
                         return artist.name;
                     });
 
-                    var btnShare = this.el.find('.btns > .btnShare');
-
-                    $('<a />')
-                        .attr('href', track.href)
-                        .attr('title', artists.join(', ') + ' - ' + track.name)
-                        .addClass('btnSpotify')
-                        .text('Spotify')
-                        .insertAfter(btnShare);
-
-                    $('<span />')
-                        .text('·')
-                        .insertAfter(btnShare);
+                    this.el.find('.btns > .btnShare').after(
+                        spotifyButton({
+                            url: track.href,
+                            artist: artists.join(', '),
+                            title: track.name
+                        })
+                    );
                 }
             }, this));
 
