@@ -4,6 +4,8 @@ define(function (require, exports /*, module */) {
     var _ = require('underscore');
     var _s = require('underscore.string');
 
+    var clientName = 'Whyd+';
+    var clientUrl = 'http://bit.ly/whyd-plus';
     var clientId = 'w+';
     var sourceMap = {
         'soundcloud': 'sc'
@@ -45,7 +47,11 @@ define(function (require, exports /*, module */) {
             name: options.title,
             img: options.image,
             text: options.text,
-            ctx: clientId
+            ctx: clientId,
+            src: {
+                id: clientUrl,
+                name: clientName
+            }
         }, function () {
             callback(null, { success: true });
         }).error(function (err) {
