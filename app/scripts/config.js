@@ -2,12 +2,6 @@ require.config({
     baseUrl: '/scripts',
     inlineText: true,
 
-    pragmasOnSave: {
-        excludeHbsParser : true,
-        excludeHbs: true,
-        excludeAfterBuild: true
-    },
-
     paths: {
         jquery: '../bower_components/jquery/jquery',
         spotify: '../bower_components/spotify/spotify',
@@ -24,6 +18,7 @@ require.config({
     },
 
     hbs: {
-        disableI18n: true
+        i18n: false,
+        helpers: false
     }
 });
