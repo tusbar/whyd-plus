@@ -1,17 +1,25 @@
 @import "font-awesome/less/font-awesome.less";
 @fa-font-path: "chrome-extension://__MSG_@@extension_id__/fonts";
 
-.post > .btns > a.btnSpotify {
-    i {
-        color: #b3b3b3;
+.post > .btns {
+
+    > a.btnRepost,
+    > a.btnSpotify,
+    > a.btnLike,
+    > a.btnComment,
+    > a.btnShare,
+    > span.postEdit > a {
+        background: none;
+        padding: 0;
+        margin: 0;
     }
 
-    &:hover {
-        i {
-            color: #4376df;
-        }
+    > span,
+    > span.postEdit > span {
+        margin: 0 4px 0 4px;
     }
 
-    background: none;
-    padding-left: 3px;
+    > span.postEdit {
+        margin: 0;
+    }
 }
