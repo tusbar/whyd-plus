@@ -59,6 +59,23 @@ define(function (require, exports /*, module */) {
         });
     };
 
+    exports.love = function (trackId, callback) {
+        callback = callback || function () {};
+
+        if (!trackId) {
+            throw new Error('Missing trackId');
+        }
+
+        return $.post('https://whyd.com/api/post', {
+            action: 'toggleLovePost',
+            pId: trackId
+        }, function (data) {
+            callback(null, data);
+        }).error(function (err) {
+            callback(err || {});
+        });
+    },
+
     exports.getUserInfo = function (userId, callback) {
         if (_.isFunction(userId)) {
             callback = userId;
