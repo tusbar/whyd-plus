@@ -74,7 +74,7 @@ define(function (require, exports /*, module */) {
         }).error(function (err) {
             callback(err || {});
         });
-    },
+    };
 
     exports.getUserInfo = function (userId, callback) {
         if (_.isFunction(userId)) {
