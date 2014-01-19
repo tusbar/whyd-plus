@@ -52,8 +52,8 @@ define(function (require, exports /*, module */) {
                 id: clientUrl,
                 name: clientName
             }
-        }, function () {
-            callback(null, { success: true });
+        }, function (data) {
+            callback(null, data);
         }).error(function (err) {
             callback(err || {});
         });
