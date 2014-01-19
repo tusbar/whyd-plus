@@ -62,7 +62,7 @@ define(function (require, exports, module) {
                         return artist.name;
                     });
 
-                    this.el.find('.btns > .btnShare').after(spotifyButton({
+                    buttons.share.after(spotifyButton({
                         url: track.href,
                         artist: artists.join(', '),
                         title: track.name
