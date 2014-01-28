@@ -13,7 +13,7 @@
     "grunt-contrib-less": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-copy": "*",
-    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-imagemin": "~0.4.1",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-requirejs": "*",
     "grunt-contrib-compress": "*",
