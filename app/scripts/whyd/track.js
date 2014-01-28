@@ -34,10 +34,9 @@ define(function (require, exports, module) {
                 edit: this.el.find('.btns > .postEdit')
             };
 
-            buttons.repost.replaceWith(repostButton({
+            buttons.repost.html(repostButton({
                 url: buttons.repost.attr('href')
             }));
-            buttons.repost = this.el.find('.btns > .btnRepost');
 
             buttons.like.html(likeButton({
                 url: buttons.like.attr('href'),
@@ -56,20 +55,17 @@ define(function (require, exports, module) {
                 attributes: true
             });
 
-            buttons.comment.replaceWith(commentButton({
+            buttons.comment.html(commentButton({
                 url: buttons.comment.attr('href')
             }));
-            buttons.comment = this.el.find('.btns > .btnComment');
 
-            buttons.share.replaceWith(shareButton({
+            buttons.share.html(shareButton({
                 url: buttons.share.attr('href')
             }));
-            buttons.share = this.el.find('.btns > .btnShare');
 
-            buttons.edit.replaceWith(editButton({
+            buttons.edit.html(editButton({
                 action: buttons.edit.find('a').attr('onclick')
             }));
-            buttons.edit = this.el.find('.btns > .postEdit');
 
             spotify.tracks(title, $.proxy(function (err, tracks) {
                 if (!err && tracks && tracks.length) {
