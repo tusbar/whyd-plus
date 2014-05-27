@@ -1,4 +1,6 @@
-# Whyd+ (whyd-plus) [![Build Status](https://secure.travis-ci.org/tusbar/whyd-plus.png?branch=master)](https://travis-ci.org/tusbar/whyd-plus)
+# Whyd+ (whyd-plus)
+
+[![Build Status](https://travis-ci.org/tusbar/whyd-plus.svg?branch=master)](https://travis-ci.org/tusbar/whyd-plus)
 
 > This extension adds extra features to Whyd (http://whyd.com) and
 > integrates it with other services such as Spotify and SoundCloud.
