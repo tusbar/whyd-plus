@@ -3,7 +3,7 @@ require.config({
     inlineText: true,
 
     paths: {
-        jquery: '../bower_components/jquery/jquery',
+        jquery: '../bower_components/jquery/dist/jquery',
         spotify: '../bower_components/spotify/spotify',
         underscore: '../bower_components/underscore-amd/underscore',
 
