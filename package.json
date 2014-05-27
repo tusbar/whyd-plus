@@ -18,8 +18,7 @@
     "grunt-contrib-requirejs": "*",
     "grunt-contrib-compress": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-bower-task": "*"
+    "grunt-contrib-jshint": "*"
   },
   "repository": {
     "type": "git",

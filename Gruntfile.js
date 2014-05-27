@@ -38,16 +38,6 @@ module.exports = function (grunt) {
 
         // ## //
 
-        bower: {
-            dist: {
-                options: {
-                    copy: false
-                }
-            }
-        },
-
-        // ## //
-
         less: {
             options: {
                 paths: ['<%= whyd.app %>/bower_components']
@@ -182,7 +172,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'clean:dist',
-        'bower:dist',
         'less:dist',
         'requirejs:dist',
         'copy:dist',
