@@ -3,7 +3,7 @@
 var fs = require('fs');
 
 module.exports = function (grunt) {
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    require('load-grunt-tasks')(grunt);
 
     var pkg = grunt.file.readJSON('package.json');
 
