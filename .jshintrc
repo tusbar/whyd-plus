@@ -16,7 +16,6 @@
     "unused": true,
     "trailing": true,
     "smarttabs": true,
-    "jquery": true,
     "globals": {
         "define": true
     }

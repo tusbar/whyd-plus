@@ -1,3 +1,5 @@
-require(['main'], function (main) {
-    main.init(window);
-});
+var main = require('./main');
+
+// ## //
+
+main.init(window);

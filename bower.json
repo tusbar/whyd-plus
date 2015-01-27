@@ -1,15 +1,6 @@
 {
   "name": "whyd-plus",
   "dependencies": {
-    "jquery": "~2.1.0",
-    "requirejs": "~2.1.11",
-    "spotify": "~0.2.0",
-    "underscore.string": "~2.3.3",
-    "underscore-amd": "~1.5.2",
-    "font-awesome": "~4.1.0",
-    "require-handlebars-plugin": "~0.7.0"
-  },
-  "resolutions": {
-    "jquery": "~2.1.0"
+    "font-awesome": "~4.1.0"
   }
 }

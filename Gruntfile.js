@@ -20,7 +20,10 @@ module.exports = function (grunt) {
         // ## //
 
         clean: {
-            dist: ['<%= whyd.dist %>/*'],
+            dist: [
+                '<%= whyd.dist %>/*',
+                'node_modules/spotify.js/node_modules'
+            ],
             build: ['<%= whyd.build %>/*']
         },
 
@@ -58,23 +61,10 @@ module.exports = function (grunt) {
 
         // ## //
 
-        requirejs: {
+        browserify: {
             dist: {
-                options: {
-                    baseUrl: '<%= whyd.app %>/scripts',
-                    mainConfigFile: '<%= whyd.app %>/scripts/config.js',
-                    out: '<%= whyd.dist %>/scripts/main.js',
-                    name: 'main',
-                    optimize: 'none',
-                    preserveLicenseComments: false,
-                    useStrict: true,
-                    wrap: true,
-                    pragmasOnSave: {
-                        excludeHbsParser : true,
-                        excludeHbs: true,
-                        excludeAfterBuild: true
-                    }
-                }
+                src: '<%= whyd.app %>/scripts/index.js',
+                dest: '<%= whyd.dist %>/scripts/index.js'
             }
         },
 
@@ -136,9 +126,7 @@ module.exports = function (grunt) {
                     report: 'min'
                 },
                 files: {
-                    '<%= whyd.dist %>/scripts/require.js': '<%= whyd.app %>/bower_components/requirejs/require.js',
-                    '<%= whyd.dist %>/scripts/main.js': '<%= whyd.dist %>/scripts/main.js',
-                    '<%= whyd.dist %>/scripts/index.js': '<%= whyd.app %>/scripts/index.js'
+                    '<%= whyd.dist %>/scripts/index.js': '<%= whyd.dist %>/scripts/index.js'
                 }
             }
         },
@@ -173,7 +161,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'clean:dist',
         'less:dist',
-        'requirejs:dist',
+        'browserify:dist',
         'copy:dist',
         'imagemin:dist',
         'cssmin:dist',
